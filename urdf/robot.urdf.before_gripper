@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Robotic Arm Assembly">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.00019615 1.7043E-08 0.02221" rpy="0 0 0" />
+      <mass value="0.70436" />
+      <inertia ixx="0.00093941" ixy="2.7877E-10" ixz="2.9706E-05" iyy="0.0010076" iyz="4.4145E-11" izz="0.0015234" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0.34902 0.34902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link_1">
+    <inertial>
+      <origin xyz="0.00472774454533826 0.00725296116974193 -0.018638307214305" rpy="0 0 0" />
+      <mass value="0.52912432805484" />
+      <inertia ixx="0.000351752164891107" ixy="-1.12604189512358E-05" ixz="6.78367673577608E-05" iyy="0.000483664400092211" iyz="4.45228073102795E-05" izz="0.00043792904719906" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.988235294117647 0.737254901960784 0.517647058823529 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 -0.056 0" rpy="1.5708 0.41971 -3.1416" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="0.5" />
+  </joint>
+  <link name="link_2">
+    <inertial>
+      <origin xyz="-1.2553085094319E-07 0.0528653709871565 -0.00692972841918116" rpy="0 0 0" />
+      <mass value="0.47645056422212" />
+      <inertia ixx="0.000772548643053617" ixy="-5.08872690365979E-09" ixz="1.74875280835119E-10" iyy="6.97134148633548E-05" iyz="-1.7617068626657E-07" izz="0.000809002049080666" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="join_2" type="revolute">
+    <origin xyz="0.01391 0 -0.04428" rpy="-1.5708 0.35447 0" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.3491" upper="0.7854" effort="1.0" velocity="0.5" />
+  </joint>
+  <link name="link_3">
+    <inertial>
+      <origin xyz="0.0446918752418923 -2.83156229627102E-05 0.0126807580405414" rpy="0 0 0" />
+      <mass value="0.379293672133408" />
+      <inertia ixx="6.96161852391358E-05" ixy="5.28440427945452E-07" ixz="2.74747263043146E-06" iyy="0.000423085110747299" iyz="-2.00013575497569E-09" izz="0.000448781460984662" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_3" type="revolute">
+    <origin xyz="0 0.11275 0" rpy="0 0 2.8192" />
+    <parent link="link_2" />
+    <child link="link_3" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.309" upper="1.309" effort="1.0" velocity="0.5" />
+  </joint>
+  <link name="link_4">
+    <inertial>
+      <origin xyz="-0.00504660445955438 -0.00544829661286414 0.0308797583807635" rpy="0 0 0" />
+      <mass value="0.118093171069112" />
+      <inertia ixx="2.8031612175875E-05" ixy="3.00839439308971E-08" ixz="-8.47013126418212E-08" iyy="3.59151519734671E-05" iyz="4.24808044837291E-06" izz="1.83536090176757E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.909803921568627 0.443137254901961 0.0313725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0.083457 0.0053 0.0125" rpy="1.5708 -1.3886 1.5708" />
+    <parent link="link_3" />
+    <child link="link_4" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.7854" upper="0.7854" effort="1.0" velocity="0.5" />
+  </joint>
+  <link name="link_5">
+    <inertial>
+      <origin xyz="-0.0100558919153506 -0.0258347648947029 0.00657975413424483" rpy="0 0 0" />
+      <mass value="0.125259830375836" />
+      <inertia ixx="5.41973865820609E-05" ixy="1.4754727654945E-05" ixz="-3.11111993768977E-06" iyy="2.84672568077564E-05" iyz="9.88108481765756E-06" izz="7.11876536246889E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.705882352941176 0.345098039215686 0.0196078431372549 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_5" type="revolute">
+    <origin xyz="-0.005 0 0.041243" rpy="-0.82419 0 1.5708" />
+    <parent link="link_4" />
+    <child link="link_5" />
+    <axis xyz="1 0 0" />
+    <limit lower="-1.5708" upper="1.5708" effort="1.0" velocity="0.5" />
+  </joint>
+  <link name="gear_1">
+    <inertial>
+      <origin xyz="0.0464382382705604 -0.00813232571718769 -0.0195" rpy="0 0 0" />
+      <mass value="0.0190551528606219" />
+      <inertia ixx="6.7370312243061E-07" ixy="2.85754600425978E-08" ixz="-1.72777350447014E-21" iyy="2.71363338534076E-06" iyz="2.11758236813575E-22" izz="3.33652276680971E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/gear_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.258823529411765 0.258823529411765 0.258823529411765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/gear_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_joint_1" type="revolute">
+    <origin xyz="-0.015361 0 0" rpy="-3.1416 0 -1.3366" />
+    <parent link="link_5" />
+    <child link="gear_1" />
+    <axis xyz="0.23207 -0.9727 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+  <link name="finger_1">
+    <inertial>
+      <origin xyz="0.0736899594075206 0.0642048498490723 0.0132500719953821" rpy="0 0 0" />
+      <mass value="0.0353106112756997" />
+      <inertia ixx="1.03723737175275E-06" ixy="-2.25894265515274E-06" ixz="-2.06094634688821E-11" iyy="1.08711324221402E-05" iyz="1.65366953333206E-11" izz="1.14831447520978E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/finger_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.250980392156863 0.247058823529412 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/finger_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_joint_4" type="revolute">
+    <origin xyz="-0.0027521 0.011535 0" rpy="-3.1416 0 0.64061" />
+    <parent link="gear_1" />
+    <child link="finger_1" />
+    <axis xyz="0.3953 -0.91855 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+  <link name="gear_2">
+    <inertial>
+      <origin xyz="0.0452903538728141 -0.0202085801077964 0.0195000000000002" rpy="0 0 0" />
+      <mass value="0.0196126693177059" />
+      <inertia ixx="6.75243528287046E-07" ixy="2.7217926454342E-08" ixz="7.2130149414624E-22" iyy="2.73665673359162E-06" iyz="-5.82335151237331E-22" izz="3.35959981036479E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/gear_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.32156862745098 0.32156862745098 0.32156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/gear_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_joint_2" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 -1.665" />
+    <parent link="link_5" />
+    <child link="gear_2" />
+    <axis xyz="0.094095 -0.99556 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+  <link name="finger_2">
+    <inertial>
+      <origin xyz="0.078671 0.055085 -0.01325" rpy="0 0 0" />
+      <mass value="0.035311" />
+      <inertia ixx="1.0373E-06" ixy="-2.2589E-06" ixz="-2.4963E-11" iyy="1.0871E-05" iyz="2.1837E-11" izz="1.1483E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/finger_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.25098 0.24706 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://six_dof_robot_description/meshes/finger_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_joint_3" type="revolute">
+    <origin xyz="0 0 0" rpy="-3.1416 0 0.49069" />
+    <parent link="gear_2" />
+    <child link="finger_2" />
+    <axis xyz="0.38616 -0.92243 0" />
+    <limit lower="0" upper="0" effort="0" velocity="0" />
+  </joint>
+</robot>
