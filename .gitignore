@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Temporary files
+*.swp
+*.tmp
+*~
+
+# Backup files
+*.before_control
+*.before_damping
+
+# macOS
+.DS_Store
+
+# ROS2 generated files
+build/
+install/
+log/

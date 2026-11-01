@@ -12,7 +12,7 @@ def generate_launch_description():
        		 PathJoinSubstitution([
  	          	 FindPackageShare('six_dof_robot_description'),
         	   	 'urdf',
-           		 'robot_1.urdf'
+           		 'robot_2.urdf'
        		 ])
    	 ]),
 	value_type = str
