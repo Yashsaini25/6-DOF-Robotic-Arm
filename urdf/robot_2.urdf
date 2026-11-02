@@ -372,7 +372,6 @@
     <plugin filename="libgz_ros2_control-system.so"
             name="gz_ros2_control::GazeboSimROS2ControlPlugin">
       <parameters>/home/yash/robot_ws/install/six_dof_robot_description/share/six_dof_robot_description/config/controllers.yaml</parameters>
-      <position_proportional_gain>10.0</position_proportional_gain>
     </plugin>
   </gazebo>
 
